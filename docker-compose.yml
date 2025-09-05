@@ -1,0 +1,28 @@
+services:
+  app:
+    build: .
+    container_name: webhook-service
+    ports:
+      - '3000:3000'
+    environment:
+      - MONGO_URL=mongodb://user:password@mongo:27017/tray?authSource=admin
+      - ACEDATA_ORDER_ENDPOINT=http://143.0.151.142:82/acedataservicos/APiIntPedidoVenda.aspx
+      - ACEDATA_API_TOKEN=dca7ab8e-5881-4f9a-8a27-770a03ca31e1
+    depends_on:
+      - mongo
+    restart: always
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongodb-data:/data/db
+    restart: always
+
+volumes:
+  mongodb-data:
