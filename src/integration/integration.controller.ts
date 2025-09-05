@@ -9,16 +9,16 @@ import {
 import { IntegrationService } from './integration.service';
 import { TrayOrderDto } from '../common/dto/tray.dto';
 
-@Controller('api')
+@Controller()
 export class IntegrationController {
   constructor(private readonly integrationService: IntegrationService) {}
 
-  @Post('dados')
+  @Post('api/dados')
   receiveOrder(@Body() trayOrder: TrayOrderDto) {
     return this.integrationService.processOrder(trayOrder);
   }
 
-  @Post('/webhook')
+  @Post('')
   @HttpCode(HttpStatus.OK)
   async receiveWebhook(@Body() payload: any) {
     console.log('Notificação da Tray recebida!');
