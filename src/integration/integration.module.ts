@@ -13,6 +13,7 @@ import {
   TrayNotificationSchema,
 } from './schemas/tray-notification.schema';
 import { TrayModule } from 'src/external/tray/tray.module';
+import { AceDataModule } from 'src/external/acedata/aceData.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { TrayModule } from 'src/external/tray/tray.module';
       { name: TrayNotification.name, schema: TrayNotificationSchema },
     ]),
     TrayModule,
+    AceDataModule
   ],
   controllers: [IntegrationController],
   providers: [IntegrationService],

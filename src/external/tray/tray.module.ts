@@ -4,5 +4,6 @@ import { TrayAuthenticationFactory } from './authentication/trayAuthentaction.fa
 
 @Module({
   providers: [TrayOrderProvider, TrayAuthenticationFactory],
+  exports: [TrayOrderProvider, TrayAuthenticationFactory]
 })
 export class TrayModule {}

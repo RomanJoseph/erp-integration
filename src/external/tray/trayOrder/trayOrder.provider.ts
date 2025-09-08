@@ -18,7 +18,7 @@ export class TrayOrderProvider {
 
     try {
       const response = await authentcatedAxiosFactory.get<TrayOrderResponse>(
-        `/orders/${id}`,
+        `/orders/${id}/complete`,
       );
       return response.data.Order;
     } catch (error) {

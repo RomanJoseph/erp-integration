@@ -1,7 +1,10 @@
-import qs from 'qs';
+import * as qs from 'qs';
 import axios, { AxiosInstance, InternalAxiosRequestConfig } from 'axios';
 import { Injectable } from '@nestjs/common';
 import { TrayAuthResponse } from './trayAuthentication.interfaces';
+
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 /**
  * A factory class to create an authenticated Axios instance for interacting with the Tray Commerce API.

@@ -1,67 +1,73 @@
-export class AceDataOrderDto {
-  empresa: number;
-  filial: number;
-  idParceiro: string;
-  prefixo: string;
-  modo: number;
-  modo2: number;
-  tipoPedido: string;
-  dataPedido: string;
-  codigoCliente: any;
-  codigoRepresentante: any;
-  codigoFechadoPor: any;
-  lanctoPadronizado: number;
-  codigoCondicaoPagto: any;
-  condicaoPagtoPrazo: any;
-  prazoMedio: any;
-  tabelaOrigem: string;
-  codigoIntegracao: string;
-  freteValor: number;
-  codigoIndexador: any;
-  valorIndexador: any;
-  dataIndexador: any;
-  presencaComprador: number;
-  intermediadorDaVenda: any;
-  codigoMarketplace: any;
-  feitoPor: any;
-  gerarRomaneio: string;
-  observacoes: any;
-  observacoesNotaFiscal: any;
-  entrega: AceDataEntregaDto;
-  itens: AceDataItemDto[];
-}
-
-export class AceDataEntregaDto {
-  tipoFreteTransportador: string;
-  codigoRedespacho: any;
-  vlrConhecRedespacho: any;
-  tipoFreteRedespacho: any;
-  codigoTransportador: any;
-  vlrConhecTransportador: number;
-}
-
-export class AceDataItemDto {
-  quantidade: number;
-  vendaPara: string;
-  codigoTipoLista: number;
-  indexador: number;
-  unidade: any;
-  precoDeListaData: any;
-  precoDeLista: any;
-  precoUnitarioIndex: any;
-  valorUnitario: number;
-  cfop: any;
-  codigoAlmoxarifado: any;
-  prazoEntrega: any;
-  dataPrevEntrega: string;
-  dataPrevSaida: any;
-  grupoFinanc: any;
-  complemento: any;
-  uniforme: any;
-  produto: AceDataProdutoDto;
+export class AceDataSituacaoItemDto {
+  CstIcmCod: string;
 }
 
 export class AceDataProdutoDto {
-  codigo: number;
-  codigoEmbalagem: any;
+  Codigo: string;
+  CodigoEmbalagem: string | null;
+}
+
+export class AceDataItemDto {
+  Quantidade: number;
+  VendaPara: string;
+  CodigoTipoLista: number;
+  Indexador: string;
+  Unidade: string | null;
+  PrecoDeListaData: string | null;
+  PrecoDeLista: number | null;
+  PrecoUnitarioIndex: number | null;
+  ValorUnitario: string;
+  CFOP: string | null;
+  CodigoAlmoxarifado: number | null; 
+  PrazoEntrega: number | null;
+  DataPrevEntrega: string;
+  DataPrevSaida: string | null;
+  GrupoFinanc: number | null;
+  Complemento: string | null;
+  Uniforme: string | null;
+  Produto: AceDataProdutoDto;
+  SituacaoItem: AceDataSituacaoItemDto;
+}
+
+export class AceDataEntregaDto {
+  TipoFreteTransportador: string;
+  CodigoRedespacho: number | null;
+  VlrConhecRedespacho: number | null;
+  TipoFreteRedespacho: string | null;
+  CodigoTransportador: number | null;
+  VlrConhecTransportador: string;
+}
+
+export class AceDataOrderDto {
+  Empresa: number;
+  Filial: number;
+  IdParceiro: string;
+  Prefixo: string;
+  Modo: string;
+  Modo2: string;
+  TipoPedido: string;
+  DataPedido: string;
+  CodigoCliente: number | null;
+  CodigoRepresentante: number | null;
+  CodigoFechadoPor: number | null;
+  LanctoPadronizado: number;
+  CodigoCondicaoPagto: number | null;
+  CondicaoPagtoPrazo: string | null;
+  PrazoMedio: number | null;
+  TabelaOrigem: string;
+  CodigoIntegracao: string;
+  FreteValor: string;
+  CodigoIndexador: number | null;
+  ValorIndexador: number | null;
+  DataIndexador: string | null;
+  PresencaComprador: number;
+  IntermediadorDaVenda: number | null;
+  CodigoMarketplace: string | null;
+  FeitoPor: string | null;
+  GerarRomaneio: 'S' | 'N';
+  Observacoes: string | null;
+  ObservacoesNotaFiscal: string | null;
+  Entrega: AceDataEntregaDto;
+  Itens: AceDataItemDto[];
+  CodigoTipoRecbto: number;
 }
