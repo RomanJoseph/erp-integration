@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { IntegrationModule } from './integration/integration.module';
+import { TrayModule } from './external/tray/tray.module';
 
 @Module({
   imports: [
