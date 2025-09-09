@@ -56,7 +56,7 @@ export class AceDataCustomerProvider {
       const response = await axiosInstance.get(this.endpoint, { data: findData });
       return response.data;
     } catch (error) {
-      console.error(`Failed to find partner with CNPJ ${cnpj}:`, error.response?.data || error.message);
+      console.error(`Failed to find partner with CNPJ`);
       return null;
     }
   }
