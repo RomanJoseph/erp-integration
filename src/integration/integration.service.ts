@@ -240,7 +240,7 @@ export class IntegrationService {
     aceDataOrder.CodigoCondicaoPagto = null;
     aceDataOrder.CondicaoPagtoPrazo = null;
     aceDataOrder.PrazoMedio = null;
-    aceDataOrder.CodigoTipoRecbto = 8;
+    aceDataOrder.CodigoTipoRecbto = this.getCodigoRecebimento(trayOrderDetails.payment_method_type);
     aceDataOrder.TabelaOrigem = 'MKP';
     aceDataOrder.CodigoIntegracao = trayOrderDetails.id;
     aceDataOrder.FreteValor = String(trayOrderDetails.shipment_value);
@@ -259,5 +259,18 @@ export class IntegrationService {
     
     this.logger.log(`[Order #${orderId}] [Convert] Payload final gerado: ${JSON.stringify(aceDataOrder)}`);
     return aceDataOrder;
+  }
+
+  private getCodigoRecebimento(payment_method: 'credit_card' | 'pix' | 'bank_billet' | ''): number {
+    switch (payment_method) {
+      case 'credit_card':
+        return 9;
+      case 'pix':
+        return 5;
+      case 'bank_billet': 3;
+        return 3;
+      default:
+        return 8;
+    }
   }
 }

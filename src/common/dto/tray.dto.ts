@@ -233,7 +233,7 @@ export interface Order {
     app_id: string;
     urls: { payment: string };
     store_segment: string;
-    payment_method_type: string;
+    payment_method_type: 'credit_card' | 'pix' | 'bank_billet' | '';
     interest_paid_by: string;
     OrderStatus: OrderStatusDetails;
     PickupLocation: any[];

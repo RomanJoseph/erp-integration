@@ -53,6 +53,8 @@ export class IntegrationController {
 
       const trayOrder = await this.trayOrderProvider.findOrderById(scope_id);
 
+      console.log(trayOrder);
+
       await this.integrationService.processOrder({
         //@ts-expect-error
         Order: trayOrder,
