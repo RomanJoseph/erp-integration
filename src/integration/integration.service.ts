@@ -234,7 +234,7 @@ export class IntegrationService {
     aceDataOrder.TipoPedido = 'VENDA NORMAL';
     aceDataOrder.DataPedido = trayOrderDetails.date;
     aceDataOrder.CodigoCliente = customerCode;
-    aceDataOrder.CodigoRepresentante = 0;
+    aceDataOrder.CodigoRepresentante = 11848;
     aceDataOrder.CodigoFechadoPor = 0;
     aceDataOrder.LanctoPadronizado = 92;
     aceDataOrder.CodigoCondicaoPagto = null;
